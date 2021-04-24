@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
+    <!-- <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    />
+    /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Weather Dashboard</title>
   </head>
@@ -16,30 +16,78 @@
       <h1>Weather Dashboard</h1>
       <h3 id="currentDate" class="lead"></h3>
     </header>
-    <div class="container">
-      <h2>Search By City:</h2>
-      <form id="user-form">
-        <input
-          name="city"
-          id="city"
-          type="text"
-          autofocus="true"
-          class="form-input"
-          placeholder="Enter City"
-        />
-        <button type="submit" class="btn">Get Weather</button>
-      </form>
+    <div class="page-container">
+      <div class="search-container">
+        <h2>Search By City:</h2>
+        <form id="user-form">
+          <input
+            name="city"
+            id="city"
+            type="text"
+            autofocus="true"
+            class="form-input"
+            placeholder="Enter City"
+          />
+          <button type="submit" class="btn">Get Weather</button>
+        </form>
+      </div>
+      <div class="results-container">
+        <div class="current-weather">
+          <h2 class="city-name">
+            City: Austin(04/25/2021)<img
+              src="http://placehold.jp/30x30.png"
+              alt=""
+            />
+          </h2>
+
+          <p class="current-temp">Current Temperature: 80°</p>
+
+          <p class="current-humidity">Current Humidity: 5</p>
+
+          <p class="wind-speed">Wind Speed: 55</p>
+
+          <p class="UV">UV Index: 7</p>
+        </div>
+
+        <div class="forecast">
+          <div class="card">
+            <p>Date</p>
+            <img src="http://placehold.jp/30x30.png" alt="" />
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+          <div class="card">
+            <p>Date</p>
+            <img src="http://placehold.jp/30x30.png" alt="" />
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+          <div class="card">
+            <p>Date</p>
+            <img src="http://placehold.jp/30x30.png" alt="" />
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+          <div class="card">
+            <p>Date</p>
+            <img src="http://placehold.jp/30x30.png" alt="" />
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+          <div class="card">
+            <p>Date</p>
+            <img src="http://placehold.jp/30x30.png" alt="" />
+            <p>Temp</p>
+            <p>Wind</p>
+            <p>Humidity</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="weather-conditions">
-      <label class="city-name">qwe</label><br>
-      <label  class="current-temp">123</label><br>
-      <label  class="current-humidity">2</label><br>
-      <label  class="wind-speed">123</label><br>
-      <label  class="UV">1</label>
-  </div>
-  <div class="five-day-forecast">
-      <div class="container" id="cards">
-          <div class="row">
   </body>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
