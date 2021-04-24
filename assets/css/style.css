@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+  font-family: Book Antiqua;
+}
+
+body {
+  background-color: #a7c5eb;
+}
+h1,
+h3 {
+  text-align: center;
+  background-image: linear-gradient(#413c69, #4a47a3);
+  color: #709fb0;
+  margin: 0;
+}
+
+h2 {
+  color: #4a47a3;
+}
+
+.btn {
+  border-radius: 12px;
+  background-color: #709fb0;
+  color: #4a47a3;
+  padding: 6px 5px;
+  width: 13.5%;
+  display: block;
+  margin: 5px 0;
+}
