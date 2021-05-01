@@ -1,3 +1,5 @@
+const searchList = document.getElementById("search-list");
+
 //current date
 $("#currentDate").append(moment().format("dddd, MMM Do YYYY"));
 //variables
@@ -7,6 +9,20 @@ var apiKey = "9c3a330f3153e65a0cf5321635105679";
 var units = "imperial";
 //document.ready when search button is clicked
 $(document).ready(function () {
+  function searchBar() {
+    searchList.innerHTML = ``;
+    if (localStorage.getItem("searchHistoryArr")) {
+      var arrStorage = JSON.parse(localStorage.getItem("searchHistoryArr"));
+      for (let i = 0; i < arrStorage.length; i++) {
+        //append search
+        var listItem = document.createElement("li");
+        listItem.innerHTML = arrStorage[i];
+        searchList.appendChild(listItem);
+      }
+    }
+  }
+  searchBar();
+
   $("#user-form").submit(performSearch);
 
   //onclick make fetch request(openweather)
@@ -44,16 +60,21 @@ $(document).ready(function () {
         if (localStorage.getItem("searchHistoryArr")) {
           console.log(localStorage.getItem("searchHistoryArr"));
           var arrStorage = JSON.parse(localStorage.getItem("searchHistoryArr"));
-          arrStorage.push(data.name);
-          localStorage.setItem("searchHistoryArr", JSON.stringify(arrStorage));
+          if (!arrStorage.includes(data.name)) {
+            arrStorage.unshift(data.name);
+            localStorage.setItem(
+              "searchHistoryArr",
+              JSON.stringify(arrStorage)
+            );
+          }
         } else {
           localStorage.setItem("searchHistoryArr", JSON.stringify([data.name]));
         }
 
         //makeUVI call
         oneCall(data.coord.lon, data.coord.lat);
-
-        $(".form-input").append($("ul"));
+        searchBar();
+        // $(".form-input").append($("ul"));
       });
   }
 
@@ -91,15 +112,3 @@ $(document).ready(function () {
       });
   }
 });
-
-// function pushData() {
-//   var city = document.getElementById("city").value;
-
-//   performSearch.push(city);
-
-//   var pval = "";
-//   for (i = 0; i < performSearch.length; i++) {
-//     pval = pval + performSearch[i] + "<br/>";
-//   }
-//   document.getElementById("pText").innerHTML = pval;
-// }
