@@ -20,36 +20,37 @@ h2 {
   color: #4a47a3;
 }
 
-.btn {
+.btn-primary {
   border-radius: 12px;
   background-color: #709fb0;
   color: #4a47a3;
   padding: 6px 5px;
-  width: 13.5%;
+  min-width: 13.5%;
   display: block;
   margin: 5px 0;
 }
 
 .page-container {
   display: flex;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   height: 100%;
 }
 
 .search-container {
-  border: 1px solid blue;
+  /* border: 1px solid blue; */
   width: 20%;
 }
 
 .results-container {
-  border: 1px solid red;
+  /* border: 1px solid red; */
   width: 80%;
 }
 
 .forecast {
-  border: 2px solid hotpink;
+  /* border: 2px solid hotpink; */
 
   display: flex;
+  flex-wrap: wrap;
 }
 
 .current-weather {
