@@ -3,7 +3,7 @@ const searchList = document.getElementById("search-list");
 //current date
 $("#currentDate").append(moment().format("dddd, MMM Do YYYY"));
 //variables
-var search = $("#city");
+var searchInput = $("#city");
 var getWeather = document.getElementById("btn");
 var apiKey = "9c3a330f3153e65a0cf5321635105679";
 var units = "imperial";
@@ -17,19 +17,24 @@ $(document).ready(function () {
         //append search
         var listItem = document.createElement("li");
         listItem.innerHTML = arrStorage[i];
+        listItem.addEventListener("click", function (e) {
+          console.log("clicked ", e.target.textContent);
+          performSearch(e.target.textContent);
+        });
         searchList.appendChild(listItem);
       }
     }
   }
   searchBar();
 
-  $("#user-form").submit(performSearch);
+  $("#user-form").submit(function (e) {
+    e.preventDefault();
+    performSearch(searchInput.val());
+  });
 
   //onclick make fetch request(openweather)
-  function performSearch(e) {
-    e.preventDefault();
-    console.log(search.val());
-    var apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${search.val()}&appid=${apiKey}&units=imperial`;
+  function performSearch(cityToSearch) {
+    var apiCall = `https://api.openweathermap.org/data/2.5/weather?q=${cityToSearch}&appid=${apiKey}&units=imperial`;
 
     //make fetch request
     fetch(apiCall)
