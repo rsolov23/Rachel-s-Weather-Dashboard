@@ -12,6 +12,14 @@ $(document).ready(function () {
   function searchBar() {
     searchList.innerHTML = ``;
     if (localStorage.getItem("searchHistoryArr")) {
+      var clearBtn = document.createElement("button");
+      clearBtn.innerHTML = "Clear History";
+      clearBtn.addEventListener("click", function () {
+        localStorage.removeItem("searchHistoryArr");
+        searchBar();
+      });
+      searchList.appendChild(clearBtn);
+
       var arrStorage = JSON.parse(localStorage.getItem("searchHistoryArr"));
       for (let i = 0; i < arrStorage.length; i++) {
         //append search
