@@ -1,13 +1,15 @@
+/* page styling */
 * {
   box-sizing: border-box;
   font-family: Book Antiqua;
   margin: 0;
   padding: 0;
 }
-
+/*body styling*/
 body {
   background-color: #a7c5eb;
 }
+/* headings color and placement*/
 h1,
 h3 {
   text-align: center;
@@ -15,11 +17,11 @@ h3 {
   color: #709fb0;
   margin: 0;
 }
-
+/* font color*/
 h2 {
   color: #4a47a3;
 }
-
+/* button styles*/
 .btn-primary {
   border-radius: 12px;
   background-color: #709fb0;
@@ -29,34 +31,30 @@ h2 {
   display: block;
   margin: 5px 0;
 }
-
+/* flex property containers*/
 .page-container {
   display: flex;
-  /* border: 1px solid black; */
+
   height: 100%;
 }
-
+/* search container width*/
 .search-container {
-  /* border: 1px solid blue; */
   width: 20%;
 }
-
+/*results container width*/
 .results-container {
-  /* border: 1px solid red; */
   width: 80%;
 }
-
+/* forecast flex*/
 .forecast {
-  /* border: 2px solid hotpink; */
-
   display: flex;
   flex-wrap: wrap;
 }
-
+/* current weather padding*/
 .current-weather {
   padding: 20px;
 }
-
+/* card styles*/
 .card {
   background-color: #7ba3d8;
   border-radius: 5px;
