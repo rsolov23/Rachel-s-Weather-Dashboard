@@ -9,16 +9,40 @@
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     /> -->
     <link rel="stylesheet" href="./assets/css/style.css" />
+
     <title>Weather Dashboard</title>
   </head>
   <body>
+    <video autoplay muted loop id="myVideo">
+      <source src="weathervideo.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
     <header>
       <!--title-->
-      <h1>Weather Dashboard</h1>
-      <h3 id="currentDate" class="lead"></h3>
+      <h1>
+        <span>W</span>
+        <span>e</span>
+        <span>a</span>
+        <span>t</span>
+        <span>h</span>
+        <span>e</span>
+        <span>r</span>
+        <span></span>
+        <span>D</span>
+        <span>a</span>
+        <span>s</span>
+        <span>h</span>
+        <span>b</span>
+        <span>o</span>
+        <span>a</span>
+        <span>r</span>
+        <span>d</span>
+      </h1>
+      <!-- <h3 id="currentDate" class="lead"></h3> -->
     </header>
     <div class="page-container">
       <div class="search-container">
+        <div class="container"></div>
         <h2>Search By City:</h2>
         <!-- -->
         <form id="user-form">
@@ -31,10 +55,18 @@
             placeholder="Enter City"
           />
 
-          <button type="submit" class="btn-primary">Get Weather</button
-          ><!-- submit button-->
+          <!-- <button type="submit" class="btn-primary example_e">Get Weather</button> -->
+          <div class="button_cont">
+            <button type="submit" class="btn-primary example_e">
+              Get Weather
+            </button>
+          </div>
+          <!-- submit button-->
         </form>
-        <ul id="search-list"></ul>
+        <ul
+          id="search-list"
+          style="margin: 0; padding: 0; text-align: center"
+        ></ul>
       </div>
       <div class="results-container">
         <div class="current-weather">

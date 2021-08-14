@@ -1,7 +1,13 @@
 const searchList = document.getElementById("search-list");
 
+//transposing unix into regular date that human people beings can read
+var date = new Date(1620496800 * 1000);
+console.log(date);
+//end of that ^
+
 //current date
 $("#currentDate").append(moment().format("dddd, MMM Do YYYY"));
+
 //variables
 var searchInput = $("#city");
 var getWeather = document.getElementById("btn");
@@ -61,13 +67,13 @@ $(document).ready(function () {
         />
       </h2>
 
-      <p class="current-temp">Current Temperature: ${data.main.temp}°F</p>
+      <p class="current-temp">Current Temperature:  ${data.main.temp}°F</p>
 
       <p class="current-humidity">Current Humidity:${data.main.humidity}%</p>
 
       <p class="wind-speed">Wind Speed: ${data.wind.speed}MPH</p>
 
-      <p class="UV">UVI: ${(data.coord.lon, data.coord.lat)} </p>`;
+      <p class="UV">UVI: <span id="uv"></span> </p>`;
 
         // save city info to local storage
         if (localStorage.getItem("searchHistoryArr")) {
@@ -99,7 +105,11 @@ $(document).ready(function () {
         return res.json();
       })
       .then(function (data) {
-        console.log(data.daily);
+        console.log(data);
+        document.querySelector("#uv").textContent = data.daily[0].uvi;
+        if (data.daily[0].uvi > 5) {
+          document.querySelector("#uv").style.backgroundColor = "red";
+        }
         document.querySelector(".forecast").innerHTML = "";
 
         for (let i = 1; i <= 5; i++) {
@@ -109,10 +119,28 @@ $(document).ready(function () {
           var forecastDoW = forecastDateUnix.toLocaleString("en-US", {
             weekday: "long",
           });
+          let currentTimeUTC = data.daily[i].dt;
+          let currentTimeZoneOffset = data.daily[i].timezone;
+          let currentTimeZoneOffsetHours = currentTimeZoneOffset / 60 / 60;
+          let currentMoment = moment
+            .unix(currentTimeUTC)
+            .utc()
+            .utcOffset(currentTimeZoneOffsetHours);
+          // let output = document.querySelector("h1");
+          // let today = new Date();
+          // let month = today.getMonth() + 1;
+          // let year = today.getFullYear();
+          // let date = today.getDate();
+          // let current_date = `${month}/${date}/${year}`;
+          // output.innerText = current_date;
           var forecastCard = document.createElement("div");
           forecastCard.classList.add("card");
+
           forecastCard.innerHTML = `<p>${forecastDoW}</p>
-                <src=" http://openweathermap.org/img/wn/5d${data.daily[0].icon}.png"
+          <h3>${currentMoment.format("(MM/DD/YY)")}</h3>
+                <img src=" http://openweathermap.org/img/wn/${
+                  data.daily[i].weather[0].icon
+                }.png"
                 alt=""/>
                 <p>Temp:${data.daily[i].temp.day}  °F</p>
                 <p>Wind Speed:${data.daily[i].wind_speed} MPH</p>
@@ -125,3 +153,22 @@ $(document).ready(function () {
       });
   }
 });
+
+// background video
+
+// Get the video
+var video = document.getElementById("myVideo");
+
+// Get the button
+var btn = document.getElementById("myBtn");
+
+// Pause and play the video, and change the button text
+function myFunction() {
+  if (video.paused) {
+    video.play();
+    btn.innerHTML = "Pause";
+  } else {
+    video.pause();
+    btn.innerHTML = "Play";
+  }
+}

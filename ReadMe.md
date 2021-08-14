@@ -1,8 +1,8 @@
-![A screenshot of the web page](./assets/images/screenshot.jpg)
+![A screenshot of the web page](./assets/images/screenshot.png)
 
-# Rachel's Weather Dashboard
+# 🌞Rachel's Weather Dashboard
 
-## Table of Contents
+## **Table of Contents**
 
 - [Description](#description)
 - [Instructions](#instructions)
@@ -10,28 +10,28 @@
 - [Link to Workday Scheduler](#weather-dashboard)
 - [Contributors](#contributors)
 
-### Description
+### _Description_
 
-This Weather Dashboard will search any city and give you the current and 5 day forecast including temperature, humidity, wind speed and UV index.
+🔹 This Weather Dashboard will search any city and give you the current and 5 day forecast including temperature, humidity, wind speed and UV index.
 
-### Instructions
+### _Instructions_
 
 1. Type in the city name that you would like to see the forecast for
 2. Press "Get Weather"
 3. Enjoy your forecast!
 4. Press "Clear History" to remove previous searches
 
+### _Github Profile_
 
-### Github Profile
+🔹 https://github.com/rsolov23/Rachel-s-Weather-Dashboard
 
-https://github.com/rsolov23/Rachel-s-Weather-Dashboard
+### _Link to my Weather Dashboard_
 
-### Link to my Workday Scheduler
+🔹 https://rsolov23.github.io/Rachel-s-Weather-Dashboard/
 
- https://rsolov23.github.io/Rachel-s-Weather-Dashboard/
+🔹 _Feel free to contribute to this project in any of the following ways:_
 
-### Contributors
+🔹 [Submit bug and feature requests](https://github.com/rsolov23/Rachel-s-Weather-Dashboard/issues)
+🔹 [Review Source Code Changes](https://github.com/rsolov23/Rachel-s-Weather-Dashboard/pulls) and make pull requests from typos to content
 
-- Rachel Solov
-- Mad props to Google, Stack Overflow, and MDN Web Docs❤️
-- Special shout out to Sean, Donte, Andres, Brendan, Megan, Tori, Mike, Bradley, Ask BCS and all my classmates❤️
+**Copyright (c) 2021 Rachel Solov**
