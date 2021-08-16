@@ -109,9 +109,14 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
         document.querySelector("#uv").textContent = data.daily[0].uvi;
-        if (data.daily[0].uvi > 5) {
+        if (data.daily[0].uvi < 3) {
           document.querySelector("#uv").style.backgroundColor = "red";
+        } else if (data.daily[0].uvi >= 3 && data.daily[0].uvi < 6) {
+          document.querySelector("#uv").style.backgroundColor = "green";
+        } else {
+          document.querySelector("#uv").style.backgroundColor = "yellow";
         }
+
         document.querySelector(".forecast").innerHTML = "";
 
         for (let i = 1; i <= 5; i++) {
