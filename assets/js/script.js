@@ -6,7 +6,7 @@ console.log(date);
 //end of that ^
 
 //current date
-$("#currentDate").append(moment().format("dddd, MMM Do YYYY"));
+// $("#currentDate").append(moment().format("dddd, MMM Do YYYY"));
 
 //variables
 var searchInput = $("#city");
@@ -58,13 +58,15 @@ $(document).ready(function () {
       .then(function (data) {
         console.log(data);
 
+        var currentDate = moment().format("MMMM D YYYY");
         document.querySelector(
           ".current-weather"
         ).innerHTML = `<h2 class="city-name">
-        City: ${data.name} <img
+        City: ${data.name}    <img
           src="https://openweathermap.org/img/wn/${data.weather[0].icon}.png"
           alt=""
         />
+        <p id="date">${currentDate}</p>
       </h2>
 
       <p class="current-temp">Current Temperature:  ${data.main.temp}°F</p>
@@ -126,13 +128,7 @@ $(document).ready(function () {
             .unix(currentTimeUTC)
             .utc()
             .utcOffset(currentTimeZoneOffsetHours);
-          // let output = document.querySelector("h1");
-          // let today = new Date();
-          // let month = today.getMonth() + 1;
-          // let year = today.getFullYear();
-          // let date = today.getDate();
-          // let current_date = `${month}/${date}/${year}`;
-          // output.innerText = current_date;
+
           var forecastCard = document.createElement("div");
           forecastCard.classList.add("card");
 
