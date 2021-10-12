@@ -31,7 +31,7 @@
 
 ### _Contribution_
 
-🔹 _Feel free to contribute to this project in any of the following ways:_
+🔹 _Feel free to contribute to this project in any of the following ways:_<br />
 🔹 [Submit bug and feature requests](https://github.com/rsolov23/Rachel-s-Weather-Dashboard/issues)<br />
 🔹 [Review Source Code Changes](https://github.com/rsolov23/Rachel-s-Weather-Dashboard/pulls) and make pull requests from typos to content
 
