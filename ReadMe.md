@@ -8,7 +8,7 @@
 - [Instructions](#instructions)
 - [Github Profile](#github-profile)
 - [Link to Workday Scheduler](#weather-dashboard)
-- [Contributors](#contributors)
+- [Contribution](#contribution)
 
 ### _Description_
 
