@@ -29,6 +29,8 @@
 
 🔹 https://rsolov23.github.io/Rachel-s-Weather-Dashboard/
 
+### _Contribution_
+
 🔹 _Feel free to contribute to this project in any of the following ways:_
 
 🔹 [Submit bug and feature requests](https://github.com/rsolov23/Rachel-s-Weather-Dashboard/issues)
